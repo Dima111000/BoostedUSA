@@ -1,0 +1,2875 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:regular700&display=swap);
+
+@charset "UTF-8";
+
+* {
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+html,
+body {
+  height: 100%;
+  min-width: 320px;
+}
+
+body {
+  color: #000;
+  line-height: 1;
+  font-family: "Roboto";
+  font-size: 0.9375rem;
+  text-rendering: optimizeLegibility;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+input,
+button,
+textarea {
+  font-family: "Roboto";
+  font-size: inherit;
+}
+
+button {
+  cursor: pointer;
+  color: inherit;
+  background-color: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+body {
+  position: relative;
+  height: 100%;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.lock body {
+  overflow: hidden;
+  -ms-touch-action: none;
+      touch-action: none;
+}
+
+.menu-open body {
+  pointer-events: none;
+}
+
+.black {
+  position: relative;
+}
+
+.wrapper {
+  min-height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow: hidden;
+}
+
+.wrapper > main {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
+.wrapper > * {
+  min-width: 0;
+}
+
+/*
+(i) Стили будут применяться ко 
+всем классам содержащим *__container
+Например header__container, main__container и т.д.
+Снипет (HTML): cnt
+*/
+
+[class*=__container] {
+  max-width: 120rem;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  margin: 0 auto;
+}
+
+#map {
+  background: url("../img/icons/loading.gif") center/50px no-repeat;
+}
+
+[class*=-ibg] {
+  position: relative;
+}
+
+[class*=-ibg] img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+[class*=-ibg_contain] img {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.button {
+  background-color: #FF4A32;
+  border-radius: 2.1875rem;
+  color: #fff;
+  padding: 0.3125rem 2.9375rem;
+  font-weight: 400;
+  text-align: center;
+  -webkit-transition: background-color 0.3s ease 0s;
+  -o-transition: background-color 0.3s ease 0s;
+  transition: background-color 0.3s ease 0s;
+}
+
+.text,
+.text-secondary {
+  font-weight: 400;
+  line-height: 1.2666666667;
+  text-align: center;
+}
+
+.title,
+.title-secondary {
+  font-weight: 700;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.text-secondary,
+.title-secondary {
+  color: #fff;
+}
+
+.red {
+  color: #FF4A32;
+}
+
+.top-page-banner {
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  background-color: #000;
+  padding: 0.4375rem 0rem;
+}
+
+.top-page-banner__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.top-page-banner__text {
+  font-size: 0.75rem;
+  line-height: 1.25;
+}
+
+.header {
+  z-index: 995;
+  -webkit-transition: all 0.4s ease 0s;
+  -o-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
+}
+
+.header.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  -webkit-box-shadow: 0rem 0.3125rem 2.625rem -0.0625rem rgb(66, 68, 90);
+  box-shadow: 0rem 0.3125rem 2.625rem -0.0625rem rgb(66, 68, 90);
+}
+
+.header__container {
+  position: relative;
+  padding: 0;
+}
+
+.header__bottom-header {
+  padding: 0.9375rem 1.25rem;
+  -webkit-transition: all 0.45s ease 0s;
+  -o-transition: all 0.45s ease 0s;
+  transition: all 0.45s ease 0s;
+}
+
+.bottom-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.9375rem;
+}
+
+.bottom-header__logo {
+  position: relative;
+  -webkit-transition: all 0.5s ease 0s;
+  -o-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
+}
+
+.menu-open .bottom-header__logo {
+  filter: none;
+  -webkit-filter: none;
+}
+
+.bottom-header__menu {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
+.bottom-header__actions {
+  position: relative;
+}
+
+.menu__logo-block {
+  display: none;
+}
+
+.menu__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-column-gap: 1.375rem;
+     -moz-column-gap: 1.375rem;
+          column-gap: 1.375rem;
+  row-gap: 0.625rem;
+  -webkit-transition: all 0.5s ease 0s;
+  -o-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
+}
+
+.menu-open .menu__list {
+  color: #000;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+.menu__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  position: relative;
+}
+
+.menu__link {
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  letter-spacing: 0.0625rem;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.menu__link::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0.0625rem;
+  height: 0.15625rem;
+  background-color: #FF4A32;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all 0.8s ease 0s;
+  -o-transition: all 0.8s ease 0s;
+  transition: all 0.8s ease 0s;
+}
+
+.menu-open .menu__link::before {
+  background-color: #000;
+}
+
+.actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 0.625rem;
+}
+
+.actions__user-profile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.actions__product-cart {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.user-icon,
+.product-cart-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.menu-open .user-icon > g > path {
+  fill: #000;
+}
+
+.menu-open .product-cart-icon > path {
+  fill: #000;
+}
+
+.icon-menu {
+  display: none;
+}
+
+.logo-block__open-icon {
+  display: none;
+}
+
+.logo-block__open-icon::before {
+  top: 0;
+}
+
+.logo-block__open-icon::after {
+  bottom: 0;
+}
+
+.logo-block__open-icon span {
+  top: calc(50% - 0.0625rem);
+}
+
+.menu-open .logo-block__open-icon span {
+  width: 0;
+}
+
+.menu-open .logo-block__open-icon::before {
+  top: calc(50% - 0.0625rem);
+  -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.menu-open .logo-block__open-icon::after {
+  bottom: calc(50% - 0.0625rem);
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.footer {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  z-index: 990;
+  background-color: #fff;
+  padding: 1.125rem 0rem;
+  -webkit-box-shadow: 0.125rem -0.625rem 4.4375rem -1.1875rem rgb(66, 68, 90);
+  box-shadow: 0.125rem -0.625rem 4.4375rem -1.1875rem rgb(66, 68, 90);
+}
+
+.footer__container {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 1.25rem;
+}
+
+@supports (padding-left: clamp( 3.125rem , 2.125rem  +  5vw , 8.125rem )) {
+  .footer__container {
+    padding-left: clamp( 3.125rem , 2.125rem  +  5vw , 8.125rem );
+  }
+}
+
+@supports not (padding-left: clamp( 3.125rem , 2.125rem  +  5vw , 8.125rem )) {
+  .footer__container {
+    padding-left: calc(3.125rem + 5 * (100vw - 20rem) / 100);
+  }
+}
+
+@supports (padding-right: clamp( 3.125rem , 2.125rem  +  5vw , 8.125rem )) {
+  .footer__container {
+    padding-right: clamp( 3.125rem , 2.125rem  +  5vw , 8.125rem );
+  }
+}
+
+@supports not (padding-right: clamp( 3.125rem , 2.125rem  +  5vw , 8.125rem )) {
+  .footer__container {
+    padding-right: calc(3.125rem + 5 * (100vw - 20rem) / 100);
+  }
+}
+
+.footer__all-rights-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0.25rem;
+}
+
+.footer__bank-block {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (2.375rem)[8];
+  grid-template-columns: repeat(8, 2.375rem);
+  -webkit-column-gap: 0.25rem;
+     -moz-column-gap: 0.25rem;
+          column-gap: 0.25rem;
+  row-gap: 0.5rem;
+}
+
+.all-rights-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.all-rights-block__text {
+  font-size: 0.8125rem;
+}
+
+.main-page.padding-top {
+  padding-top: 3.125rem;
+}
+
+.no-webp .main-page__container{
+  background: url(../img/welcome/back-img.png) center bottom/cover no-repeat; }
+
+@supports (min-height: clamp( 25rem , 18.75rem  +  31.25vw , 56.25rem )) {
+  .main-page__container {
+    min-height: clamp( 25rem , 18.75rem  +  31.25vw , 56.25rem );
+  }
+}
+
+@supports not (min-height: clamp( 25rem , 18.75rem  +  31.25vw , 56.25rem )) {
+  .main-page__container {
+    min-height: calc(25rem + 31.25 * (100vw - 20rem) / 100);
+  }
+}
+
+.main-page__block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-top: 2.8125rem;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.main-page__title {
+  margin-bottom: 0.875rem;
+}
+
+@supports (font-size: clamp( 1.5rem , 1.4rem  +  0.5vw , 2rem )) {
+  .main-page__title {
+    font-size: clamp( 1.5rem , 1.4rem  +  0.5vw , 2rem );
+  }
+}
+
+@supports not (font-size: clamp( 1.5rem , 1.4rem  +  0.5vw , 2rem )) {
+  .main-page__title {
+    font-size: calc(1.5rem + 0.5 * (100vw - 20rem) / 100);
+  }
+}
+
+.main-page__text {
+  max-width: 33.5625rem;
+  margin-bottom: 1.375rem;
+}
+
+@supports (font-size: clamp( 0.8125rem , 0.7875rem  +  0.125vw , 0.9375rem )) {
+  .main-page__text {
+    font-size: clamp( 0.8125rem , 0.7875rem  +  0.125vw , 0.9375rem );
+  }
+}
+
+@supports not (font-size: clamp( 0.8125rem , 0.7875rem  +  0.125vw , 0.9375rem )) {
+  .main-page__text {
+    font-size: calc(0.8125rem + 0.125 * (100vw - 20rem) / 100);
+  }
+}
+
+.main-page__buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0.75rem;
+}
+
+.buttons__main-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.buttons__text {
+  text-transform: uppercase;
+}
+
+.brand-swiper-page.padding-top {
+  padding-top: 3.125rem;
+}
+
+.brand-swiper-page__container {
+  position: relative;
+  background-color: #000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.brand-swiper-page__slider {
+  max-width: 65.875rem;
+}
+
+.brand-swiper-page__slide {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 1.125rem 0;
+}
+
+.title-promotion-page.padding-top {
+  padding-top: 3.125rem;
+}
+
+@supports (padding-top: clamp( 3.125rem , 3.1rem  +  0.125vw , 3.25rem )) {
+  .title-promotion-page {
+    padding-top: clamp( 3.125rem , 3.1rem  +  0.125vw , 3.25rem );
+  }
+}
+
+@supports not (padding-top: clamp( 3.125rem , 3.1rem  +  0.125vw , 3.25rem )) {
+  .title-promotion-page {
+    padding-top: calc(3.125rem + 0.125 * (100vw - 20rem) / 100);
+  }
+}
+
+.title-promotion-page__container {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 1.625rem;
+}
+
+.title-promotion-page__container::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  background-color: #CFCFCF;
+  width: 4.375rem;
+  height: 0.125rem;
+}
+
+.title-promotion-page__title {
+  line-height: 1.125;
+  max-width: 41.4375rem;
+}
+
+@supports (font-size: clamp( 1.875rem , 1.85rem  +  0.125vw , 2rem )) {
+  .title-promotion-page__title {
+    font-size: clamp( 1.875rem , 1.85rem  +  0.125vw , 2rem );
+  }
+}
+
+@supports not (font-size: clamp( 1.875rem , 1.85rem  +  0.125vw , 2rem )) {
+  .title-promotion-page__title {
+    font-size: calc(1.875rem + 0.125 * (100vw - 20rem) / 100);
+  }
+}
+
+.title-promotion-page__text {
+  line-height: 1.2666666667;
+  max-width: 42.8125rem;
+  padding-bottom: 1.5625rem;
+}
+
+@supports (font-size: clamp( 0.8125rem , 0.7875rem  +  0.125vw , 0.9375rem )) {
+  .title-promotion-page__text {
+    font-size: clamp( 0.8125rem , 0.7875rem  +  0.125vw , 0.9375rem );
+  }
+}
+
+@supports not (font-size: clamp( 0.8125rem , 0.7875rem  +  0.125vw , 0.9375rem )) {
+  .title-promotion-page__text {
+    font-size: calc(0.8125rem + 0.125 * (100vw - 20rem) / 100);
+  }
+}
+
+.photo-fade-swiper-page {
+  padding-bottom: 1.25rem;
+}
+
+.photo-fade-swiper-page.padding-top {
+  padding-top: 3.125rem;
+}
+
+@supports (padding-top: clamp( 2.5rem , 2.425rem  +  0.375vw , 2.875rem )) {
+  .photo-fade-swiper-page {
+    padding-top: clamp( 2.5rem , 2.425rem  +  0.375vw , 2.875rem );
+  }
+}
+
+@supports not (padding-top: clamp( 2.5rem , 2.425rem  +  0.375vw , 2.875rem )) {
+  .photo-fade-swiper-page {
+    padding-top: calc(2.5rem + 0.375 * (100vw - 20rem) / 100);
+  }
+}
+
+.photo-fade-swiper-page__container {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 1.25rem;
+}
+
+.photo-fade-swiper-page__photo-box {
+  position: relative;
+  max-width: 36.25rem;
+  aspect-ratio: 1/1;
+}
+
+.photo-fade-swiper-page__img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.photo-fade-swiper-page__text-box {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 0.75rem;
+}
+
+.photo-fade-swiper-page__title {
+  font-weight: 400;
+}
+
+@supports (font-size: clamp( 1.125rem , 1.0375rem  +  0.4375vw , 1.5625rem )) {
+  .photo-fade-swiper-page__title {
+    font-size: clamp( 1.125rem , 1.0375rem  +  0.4375vw , 1.5625rem );
+  }
+}
+
+@supports not (font-size: clamp( 1.125rem , 1.0375rem  +  0.4375vw , 1.5625rem )) {
+  .photo-fade-swiper-page__title {
+    font-size: calc(1.125rem + 0.4375 * (100vw - 20rem) / 100);
+  }
+}
+
+.photo-fade-swiper-page__text {
+  font-weight: 400;
+}
+
+@supports (font-size: clamp( 0.875rem , 0.825rem  +  0.25vw , 1.125rem )) {
+  .photo-fade-swiper-page__text {
+    font-size: clamp( 0.875rem , 0.825rem  +  0.25vw , 1.125rem );
+  }
+}
+
+@supports not (font-size: clamp( 0.875rem , 0.825rem  +  0.25vw , 1.125rem )) {
+  .photo-fade-swiper-page__text {
+    font-size: calc(0.875rem + 0.25 * (100vw - 20rem) / 100);
+  }
+}
+
+.electric-skateboard-page.padding-top {
+  padding-top: 3.125rem;
+}
+
+.no-webp .electric-skateboard-page__container{
+  background: url(../img/welcome/back-img-2.png) center center/cover no-repeat; }
+
+.electric-skateboard-page__container {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-top: 2.75rem;
+  gap: 1rem;
+}
+
+@supports (min-height: clamp( 31.25rem , 28.3rem  +  14.75vw , 46rem )) {
+  .electric-skateboard-page__container {
+    min-height: clamp( 31.25rem , 28.3rem  +  14.75vw , 46rem );
+  }
+}
+
+@supports not (min-height: clamp( 31.25rem , 28.3rem  +  14.75vw , 46rem )) {
+  .electric-skateboard-page__container {
+    min-height: calc(31.25rem + 14.75 * (100vw - 20rem) / 100);
+  }
+}
+
+.electric-skateboard-page__text {
+  max-width: 30.5rem;
+  text-align: center;
+  letter-spacing: 0.0625rem;
+}
+
+.electric-skateboard-page__title {
+  line-height: 1.2142857143;
+}
+
+@supports (font-size: clamp( 2rem , 1.8375rem  +  0.8125vw , 2.8125rem )) {
+  .electric-skateboard-page__title {
+    font-size: clamp( 2rem , 1.8375rem  +  0.8125vw , 2.8125rem );
+  }
+}
+
+@supports not (font-size: clamp( 2rem , 1.8375rem  +  0.8125vw , 2.8125rem )) {
+  .electric-skateboard-page__title {
+    font-size: calc(2rem + 0.8125 * (100vw - 20rem) / 100);
+  }
+}
+
+.electric-skateboard-page__button {
+  padding: 0.3125rem 4.125rem;
+}
+
+.electric-scooter-page.padding-top {
+  padding-top: 3.125rem;
+}
+
+@supports (padding-top: clamp( 1.25rem , 0.9375rem  +  1.5625vw , 2.8125rem )) {
+  .electric-scooter-page {
+    padding-top: clamp( 1.25rem , 0.9375rem  +  1.5625vw , 2.8125rem );
+  }
+}
+
+@supports not (padding-top: clamp( 1.25rem , 0.9375rem  +  1.5625vw , 2.8125rem )) {
+  .electric-scooter-page {
+    padding-top: calc(1.25rem + 1.5625 * (100vw - 20rem) / 100);
+  }
+}
+
+@supports (padding-bottom: clamp( 1.25rem , 0.9375rem  +  1.5625vw , 2.8125rem )) {
+  .electric-scooter-page {
+    padding-bottom: clamp( 1.25rem , 0.9375rem  +  1.5625vw , 2.8125rem );
+  }
+}
+
+@supports not (padding-bottom: clamp( 1.25rem , 0.9375rem  +  1.5625vw , 2.8125rem )) {
+  .electric-scooter-page {
+    padding-bottom: calc(1.25rem + 1.5625 * (100vw - 20rem) / 100);
+  }
+}
+
+.electric-scooter-page__container {
+  position: relative;
+}
+
+.electric-scooter-page__box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@supports (padding-left: clamp( 1.875rem , 0.75rem  +  5.625vw , 7.5rem )) {
+  .electric-scooter-page__box {
+    padding-left: clamp( 1.875rem , 0.75rem  +  5.625vw , 7.5rem );
+  }
+}
+
+@supports not (padding-left: clamp( 1.875rem , 0.75rem  +  5.625vw , 7.5rem )) {
+  .electric-scooter-page__box {
+    padding-left: calc(1.875rem + 5.625 * (100vw - 20rem) / 100);
+  }
+}
+
+@supports (padding-right: clamp( 1.875rem , 0.75rem  +  5.625vw , 7.5rem )) {
+  .electric-scooter-page__box {
+    padding-right: clamp( 1.875rem , 0.75rem  +  5.625vw , 7.5rem );
+  }
+}
+
+@supports not (padding-right: clamp( 1.875rem , 0.75rem  +  5.625vw , 7.5rem )) {
+  .electric-scooter-page__box {
+    padding-right: calc(1.875rem + 5.625 * (100vw - 20rem) / 100);
+  }
+}
+
+.electric-scooter-page__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.electric-scooter-page__item.flex-dir-col {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+}
+
+.electric-scooter-page__image-block {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+.flex-dir-col .electric-scooter-page__image-block {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+}
+
+.electric-scooter-page__image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 28.125rem;
+  height: 28.125rem;
+  display: block;
+}
+
+.electric-scooter-page__img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.electric-scooter-page .electric-scooter-page__slider {
+  margin-top: 0.9375rem;
+  margin-bottom: 2.5rem;
+  display: none;
+  max-width: 75rem;
+}
+
+.electric-scooter-page .electric-scooter-page__wrapper {
+  position: relative;
+}
+
+.electric-scooter-page .electric-scooter-page__slide {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.electric-scooter-page .electric-scooter-page__slide > picture > img {
+  width: 43.75rem;
+  height: 40.625rem;
+  padding: 0rem 0.9375rem;
+}
+
+.electric-scooter-page .electric-scooter-page__slide > img {
+  width: 43.75rem;
+  height: 40.625rem;
+  padding: 0rem 0.9375rem;
+}
+
+.electric-scooter-page__text-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 4.125rem 0rem;
+  gap: 1.4375rem;
+  max-width: 21.25rem;
+  margin-left: 2.5rem;
+}
+
+.flex-dir-col .electric-scooter-page__text-block {
+  max-width: 37.5rem;
+}
+
+.electric-scooter-page__title {
+  text-align: left;
+  font-weight: 400;
+}
+
+.electric-scooter-page__text {
+  text-align: left;
+  line-height: 1.4666666667;
+}
+
+.electric-scooter-page__button {
+  max-width: 6.3125rem;
+  text-align: center;
+  padding: 0.3125rem 1rem;
+}
+
+.boosted-shop-page.padding-top {
+  padding-top: 3.125rem;
+}
+
+.boosted-shop-page__container {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+.boosted-shop-page__item {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 40rem;
+}
+
+.boosted-shop-page__item > picture {
+  width: 100%;
+}
+
+.boosted-shop-page__item > picture > img {
+  width: 100%;
+}
+
+.boosted-shop-page__item > img {
+  width: 100%;
+}
+
+.boosted-shop-page__image {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.boosted-shop-page__text-block {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 0.9375rem;
+}
+
+.boosted-shop-page__text {
+  font-weight: 400;
+  font-size: 1.5625rem;
+  line-height: 1.2;
+}
+
+.boosted-shop-page__text.text-stock {
+  font-size: 1.125rem;
+  text-transform: uppercase;
+}
+
+.youtube-video-page.padding-top {
+  padding-top: 3.125rem;
+}
+
+@supports (padding-top: clamp( 1.71875rem , 1.375rem  +  1.71875vw , 3.4375rem )) {
+  .youtube-video-page {
+    padding-top: clamp( 1.71875rem , 1.375rem  +  1.71875vw , 3.4375rem );
+  }
+}
+
+@supports not (padding-top: clamp( 1.71875rem , 1.375rem  +  1.71875vw , 3.4375rem )) {
+  .youtube-video-page {
+    padding-top: calc(1.71875rem + 1.71875 * (100vw - 20rem) / 100);
+  }
+}
+
+.youtube-video-page__container {
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (33.75rem)[2];
+  grid-template-columns: repeat(2, 33.75rem);
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 1.25rem;
+}
+
+@supports (padding-left: clamp( 5rem , 4.125rem  +  4.375vw , 9.375rem )) {
+  .youtube-video-page__container {
+    padding-left: clamp( 5rem , 4.125rem  +  4.375vw , 9.375rem );
+  }
+}
+
+@supports not (padding-left: clamp( 5rem , 4.125rem  +  4.375vw , 9.375rem )) {
+  .youtube-video-page__container {
+    padding-left: calc(5rem + 4.375 * (100vw - 20rem) / 100);
+  }
+}
+
+@supports (padding-right: clamp( 5rem , 4.125rem  +  4.375vw , 9.375rem )) {
+  .youtube-video-page__container {
+    padding-right: clamp( 5rem , 4.125rem  +  4.375vw , 9.375rem );
+  }
+}
+
+@supports not (padding-right: clamp( 5rem , 4.125rem  +  4.375vw , 9.375rem )) {
+  .youtube-video-page__container {
+    padding-right: calc(5rem + 4.375 * (100vw - 20rem) / 100);
+  }
+}
+
+.products-swiper-page {
+  padding-top: 3.375rem;
+}
+
+.products-swiper-page.padding-top {
+  padding-top: 3.125rem;
+}
+
+@supports (padding-bottom: clamp( 3.375rem , 2.8625rem  +  2.5625vw , 5.9375rem )) {
+  .products-swiper-page {
+    padding-bottom: clamp( 3.375rem , 2.8625rem  +  2.5625vw , 5.9375rem );
+  }
+}
+
+@supports not (padding-bottom: clamp( 3.375rem , 2.8625rem  +  2.5625vw , 5.9375rem )) {
+  .products-swiper-page {
+    padding-bottom: calc(3.375rem + 2.5625 * (100vw - 20rem) / 100);
+  }
+}
+
+.products-swiper-page__container {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@supports (gap: clamp( 1.25rem , 0.975rem  +  1.375vw , 2.625rem )) {
+  .products-swiper-page__container {
+    gap: clamp( 1.25rem , 0.975rem  +  1.375vw , 2.625rem );
+  }
+}
+
+@supports not (gap: clamp( 1.25rem , 0.975rem  +  1.375vw , 2.625rem )) {
+  .products-swiper-page__container {
+    gap: calc(1.25rem + 1.375 * (100vw - 20rem) / 100);
+  }
+}
+
+.products-swiper-page__title-block {
+  max-width: 23rem;
+  margin: 0 auto;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@supports (gap: clamp( 0.9375rem , 0.85rem  +  0.4375vw , 1.375rem )) {
+  .products-swiper-page__title-block {
+    gap: clamp( 0.9375rem , 0.85rem  +  0.4375vw , 1.375rem );
+  }
+}
+
+@supports not (gap: clamp( 0.9375rem , 0.85rem  +  0.4375vw , 1.375rem )) {
+  .products-swiper-page__title-block {
+    gap: calc(0.9375rem + 0.4375 * (100vw - 20rem) / 100);
+  }
+}
+
+.products-swiper-page__title-block::before {
+  content: "";
+  position: absolute;
+  width: 4.375rem;
+  height: 0.125rem;
+  background-color: #CFCFCF;
+  bottom: 0;
+  text-align: center;
+}
+
+.products-swiper-page__title {
+  margin-bottom: 1.375rem;
+}
+
+.product-swiper-page__slider {
+  width: 100%;
+  padding: 0rem 0.625rem;
+  position: relative;
+}
+
+.product-swiper-page__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.product-swiper-page__slide {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 0.28125rem;
+}
+
+.product-swiper-page__image {
+  cursor: pointer;
+}
+
+.product-swiper-page__arrow-icon {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  padding: 0rem 0.625rem;
+}
+
+.product-swiper-page__arrow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0.625rem;
+  background: rgba(255, 255, 255, 0.75);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.product-price-block {
+  text-align: center;
+  max-width: 8.4375rem;
+}
+
+.product-price-block__title {
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.2857142857;
+  color: #FF4A32;
+  cursor: pointer;
+  -webkit-transition: color 0.3s ease 0s;
+  -o-transition: color 0.3s ease 0s;
+  transition: color 0.3s ease 0s;
+}
+
+.product-price-block__price-block {
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.2857142857;
+  text-align: center;
+}
+
+.price-block__old-price {
+  color: #373737;
+}
+
+.price-block__new-price {
+  color: #FF2121;
+}
+
+.price-block__sold-out {
+  font-size: 0.9375rem;
+  opacity: 0.3;
+}
+
+.our-virtues-page {
+  background-color: #000;
+}
+
+.our-virtues-page.padding-top {
+  padding-top: 3.125rem;
+}
+
+@supports (padding-top: clamp( 1.875rem , 1.6875rem  +  0.9375vw , 2.8125rem )) {
+  .our-virtues-page {
+    padding-top: clamp( 1.875rem , 1.6875rem  +  0.9375vw , 2.8125rem );
+  }
+}
+
+@supports not (padding-top: clamp( 1.875rem , 1.6875rem  +  0.9375vw , 2.8125rem )) {
+  .our-virtues-page {
+    padding-top: calc(1.875rem + 0.9375 * (100vw - 20rem) / 100);
+  }
+}
+
+@supports (padding-bottom: clamp( 1.875rem , 1.6875rem  +  0.9375vw , 2.8125rem )) {
+  .our-virtues-page {
+    padding-bottom: clamp( 1.875rem , 1.6875rem  +  0.9375vw , 2.8125rem );
+  }
+}
+
+@supports not (padding-bottom: clamp( 1.875rem , 1.6875rem  +  0.9375vw , 2.8125rem )) {
+  .our-virtues-page {
+    padding-bottom: calc(1.875rem + 0.9375 * (100vw - 20rem) / 100);
+  }
+}
+
+.our-virtues-page__container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (14.75rem)[4];
+  grid-template-columns: repeat(4, 14.75rem);
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@supports ((-moz-column-gap: clamp( 2.5rem , 2rem  +  2.5vw , 5rem )) or (column-gap: clamp( 2.5rem , 2rem  +  2.5vw , 5rem ))) {
+  .our-virtues-page__container {
+    -webkit-column-gap: clamp( 2.5rem , 2rem  +  2.5vw , 5rem );
+       -moz-column-gap: clamp( 2.5rem , 2rem  +  2.5vw , 5rem );
+            column-gap: clamp( 2.5rem , 2rem  +  2.5vw , 5rem );
+  }
+}
+
+@supports not ((-moz-column-gap: clamp( 2.5rem , 2rem  +  2.5vw , 5rem )) or (column-gap: clamp( 2.5rem , 2rem  +  2.5vw , 5rem ))) {
+  .our-virtues-page__container {
+    -webkit-column-gap: calc(2.5rem + 2.5 * (100vw - 20rem) / 100);
+       -moz-column-gap: calc(2.5rem + 2.5 * (100vw - 20rem) / 100);
+            column-gap: calc(2.5rem + 2.5 * (100vw - 20rem) / 100);
+  }
+}
+
+@supports (row-gap: clamp( 1.5625rem , 1.4375rem  +  0.625vw , 2.1875rem )) {
+  .our-virtues-page__container {
+    row-gap: clamp( 1.5625rem , 1.4375rem  +  0.625vw , 2.1875rem );
+  }
+}
+
+@supports not (row-gap: clamp( 1.5625rem , 1.4375rem  +  0.625vw , 2.1875rem )) {
+  .our-virtues-page__container {
+    row-gap: calc(1.5625rem + 0.625 * (100vw - 20rem) / 100);
+  }
+}
+
+.our-virtues-page__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1.15625rem;
+}
+
+.our-virtues-page__title {
+  font-weight: 400;
+}
+
+@supports (font-size: clamp( 1.375rem , 1.2625rem  +  0.5625vw , 1.9375rem )) {
+  .our-virtues-page__title {
+    font-size: clamp( 1.375rem , 1.2625rem  +  0.5625vw , 1.9375rem );
+  }
+}
+
+@supports not (font-size: clamp( 1.375rem , 1.2625rem  +  0.5625vw , 1.9375rem )) {
+  .our-virtues-page__title {
+    font-size: calc(1.375rem + 0.5625 * (100vw - 20rem) / 100);
+  }
+}
+
+.our-virtues-page__text {
+  max-width: 16.875rem;
+  font-size: 0.9375rem;
+  line-height: 1.4666666667;
+}
+
+.pre-footer-page {
+  padding: 3.125rem 0rem;
+  margin-bottom: 1.25rem;
+  background-color: #F7F7F7;
+}
+
+.pre-footer-page__container {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 1.25rem;
+}
+
+@supports (padding-left: clamp( 3.125rem , 2rem  +  5.625vw , 8.75rem )) {
+  .pre-footer-page__container {
+    padding-left: clamp( 3.125rem , 2rem  +  5.625vw , 8.75rem );
+  }
+}
+
+@supports not (padding-left: clamp( 3.125rem , 2rem  +  5.625vw , 8.75rem )) {
+  .pre-footer-page__container {
+    padding-left: calc(3.125rem + 5.625 * (100vw - 20rem) / 100);
+  }
+}
+
+@supports (padding-right: clamp( 3.125rem , 2rem  +  5.625vw , 8.75rem )) {
+  .pre-footer-page__container {
+    padding-right: clamp( 3.125rem , 2rem  +  5.625vw , 8.75rem );
+  }
+}
+
+@supports not (padding-right: clamp( 3.125rem , 2rem  +  5.625vw , 8.75rem )) {
+  .pre-footer-page__container {
+    padding-right: calc(3.125rem + 5.625 * (100vw - 20rem) / 100);
+  }
+}
+
+.pre-footer-page__menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 0.625rem;
+}
+
+.pre-footer-page__text-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  max-width: 23.75rem;
+}
+
+@supports (gap: clamp( 1rem , 0.9375rem  +  0.3125vw , 1.3125rem )) {
+  .pre-footer-page__text-block {
+    gap: clamp( 1rem , 0.9375rem  +  0.3125vw , 1.3125rem );
+  }
+}
+
+@supports not (gap: clamp( 1rem , 0.9375rem  +  0.3125vw , 1.3125rem )) {
+  .pre-footer-page__text-block {
+    gap: calc(1rem + 0.3125 * (100vw - 20rem) / 100);
+  }
+}
+
+.pre-footer-page-menu {
+  padding: 3.125rem 0rem;
+}
+
+.pre-footer-page-menu__title {
+  font-weight: 400;
+}
+
+@supports (font-size: clamp( 1.125rem , 1.1rem  +  0.125vw , 1.25rem )) {
+  .pre-footer-page-menu__title {
+    font-size: clamp( 1.125rem , 1.1rem  +  0.125vw , 1.25rem );
+  }
+}
+
+@supports not (font-size: clamp( 1.125rem , 1.1rem  +  0.125vw , 1.25rem )) {
+  .pre-footer-page-menu__title {
+    font-size: calc(1.125rem + 0.125 * (100vw - 20rem) / 100);
+  }
+}
+
+.pre-footer-page-menu__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.pre-footer-page-menu__link {
+  font-weight: 400;
+  font-size: 0.8125rem;
+  line-height: 1.6153846154;
+}
+
+@supports (font-size: clamp( 1.0625rem , 1.0375rem  +  0.125vw , 1.1875rem )) {
+  .pre-footer-page-text-block__title {
+    font-size: clamp( 1.0625rem , 1.0375rem  +  0.125vw , 1.1875rem );
+  }
+}
+
+@supports not (font-size: clamp( 1.0625rem , 1.0375rem  +  0.125vw , 1.1875rem )) {
+  .pre-footer-page-text-block__title {
+    font-size: calc(1.0625rem + 0.125 * (100vw - 20rem) / 100);
+  }
+}
+
+.pre-footer-page-text-block__text {
+  text-align: left;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.pre-footer-page-text-block__adress-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: left;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+}
+
+.pre-footer-page-text-block__text-adress {
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  background: #000 url(../img/loading-2.gif) center center/15% no-repeat;
+}
+
+.preloader.loading {
+  -webkit-animation: vanish 1s forwards;
+          animation: vanish 1s forwards;
+}
+
+@-webkit-keyframes vanish {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes vanish {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.swiper {
+  overflow: hidden;
+}
+
+.swiper-wrapper {
+  width: 100%;
+  height: 100%;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+
+.swiper-vertical .swiper-wrapper {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.swiper-autoheight .swiper-wrapper {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.swiper-initialized .swiper-slide {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+.swiper-android .swiper-slide,
+.swiper-android .swiper-wrapper {
+  -webkit-transform: translate3d(0px, 0, 0);
+          transform: translate3d(0px, 0, 0);
+}
+
+.swiper-button-lock {
+  display: none !important;
+}
+
+@media (max-width: 48em) {
+  .all-rights-block__text {
+    font-size: 0.625rem;
+  }
+}
+
+@media (max-width: 84.43625em) {
+  .boosted-shop-page__container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+@supports (font-size: clamp( 1.5rem , 0.925rem  +  2.875vw , 4.375rem )) {
+    .boosted-shop-page__text {
+      font-size: clamp( 1.5rem , 0.925rem  +  2.875vw , 4.375rem );
+    }
+}
+
+@supports not (font-size: clamp( 1.5rem , 0.925rem  +  2.875vw , 4.375rem )) {
+    .boosted-shop-page__text {
+      font-size: calc(1.5rem + 2.875 * (100vw - 20rem) / 100);
+    }
+}
+
+@supports (font-size: clamp( 1rem , 0.725rem  +  1.375vw , 2.375rem )) {
+    .boosted-shop-page__text.text-stock {
+      font-size: clamp( 1rem , 0.725rem  +  1.375vw , 2.375rem );
+    }
+}
+
+@supports not (font-size: clamp( 1rem , 0.725rem  +  1.375vw , 2.375rem )) {
+    .boosted-shop-page__text.text-stock {
+      font-size: calc(1rem + 1.375 * (100vw - 20rem) / 100);
+    }
+}
+}
+
+@media (max-width: 84.375em) {
+  .boosted-shop-page__item {
+    width: 100%;
+  }
+}
+
+@media (max-width: 81.62375em) {
+  .electric-scooter-page__image-block {
+    -ms-grid-columns: (1fr)[2];
+    grid-template-columns: repeat(2, 1fr);
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 80.06125em) {
+  .electric-scooter-page__box {
+    padding: 0rem 3.75rem;
+  }
+
+  .electric-scooter-page__item {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+    gap: 3.125rem;
+  }
+
+  .electric-scooter-page__text-block {
+    margin: 0;
+    max-width: 100%;
+  }
+
+  .electric-scooter-page__button {
+    max-width: 15.625rem;
+    padding: 0.9375rem 1rem;
+  }
+}
+
+@media (max-width: 76.87375em) {
+  .photo-fade-swiper-page__container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+@media (max-width: 75.06125em) {
+  .electric-scooter-page__image {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    aspect-ratio: 0;
+    width: 28.125rem;
+    height: 28.125rem;
+  }
+}
+
+@media (max-width: 70.93625em) {
+  .youtube-video-page__container {
+    grid-template-columns: repeat(auto-fill, 33.75rem);
+  }
+
+@supports (padding-left: clamp( 2.5rem , 2.125rem  +  1.875vw , 4.375rem )) {
+    .youtube-video-page__container {
+      padding-left: clamp( 2.5rem , 2.125rem  +  1.875vw , 4.375rem );
+    }
+}
+
+@supports not (padding-left: clamp( 2.5rem , 2.125rem  +  1.875vw , 4.375rem )) {
+    .youtube-video-page__container {
+      padding-left: calc(2.5rem + 1.875 * (100vw - 20rem) / 100);
+    }
+}
+
+@supports (padding-right: clamp( 2.5rem , 2.125rem  +  1.875vw , 4.375rem )) {
+    .youtube-video-page__container {
+      padding-right: clamp( 2.5rem , 2.125rem  +  1.875vw , 4.375rem );
+    }
+}
+
+@supports not (padding-right: clamp( 2.5rem , 2.125rem  +  1.875vw , 4.375rem )) {
+    .youtube-video-page__container {
+      padding-right: calc(2.5rem + 1.875 * (100vw - 20rem) / 100);
+    }
+}
+
+  .youtube-video-page__item {
+    width: 100%;
+  }
+
+@supports (height: clamp( 15.625rem , 12.5rem  +  15.625vw , 31.25rem )) {
+    .youtube-video-page__item {
+      height: clamp( 15.625rem , 12.5rem  +  15.625vw , 31.25rem );
+    }
+}
+
+@supports not (height: clamp( 15.625rem , 12.5rem  +  15.625vw , 31.25rem )) {
+    .youtube-video-page__item {
+      height: calc(15.625rem + 15.625 * (100vw - 20rem) / 100);
+    }
+}
+
+  .youtube-video-page__video {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media (max-width: 70.93625em) and (max-width: 43.31125em) {
+@supports (height: clamp( 13.125rem , 10.5rem  +  13.125vw , 26.25rem )) {
+    .youtube-video-page__item {
+      height: clamp( 13.125rem , 10.5rem  +  13.125vw , 26.25rem );
+    }
+}
+
+@supports not (height: clamp( 13.125rem , 10.5rem  +  13.125vw , 26.25rem )) {
+    .youtube-video-page__item {
+      height: calc(13.125rem + 13.125 * (100vw - 20rem) / 100);
+    }
+}
+}
+
+@media (max-width: 70.93625em) and (max-width: 33.68625em) {
+@supports (height: clamp( 11.25rem , 9rem  +  11.25vw , 22.5rem )) {
+    .youtube-video-page__item {
+      height: clamp( 11.25rem , 9rem  +  11.25vw , 22.5rem );
+    }
+}
+
+@supports not (height: clamp( 11.25rem , 9rem  +  11.25vw , 22.5rem )) {
+    .youtube-video-page__item {
+      height: calc(11.25rem + 11.25 * (100vw - 20rem) / 100);
+    }
+}
+}
+
+@media (max-width: 70.93625em) and (max-width: 27.68625em) {
+@supports (height: clamp( 11.125rem , 9.475rem  +  8.25vw , 19.375rem )) {
+    .youtube-video-page__item {
+      height: clamp( 11.125rem , 9.475rem  +  8.25vw , 19.375rem );
+    }
+}
+
+@supports not (height: clamp( 11.125rem , 9.475rem  +  8.25vw , 19.375rem )) {
+    .youtube-video-page__item {
+      height: calc(11.125rem + 8.25 * (100vw - 20rem) / 100);
+    }
+}
+}
+
+@media (max-width: 70.93625em) and (max-width: 24.68625em) {
+@supports (height: clamp( 10rem , 8.6875rem  +  6.5625vw , 16.5625rem )) {
+    .youtube-video-page__item {
+      height: clamp( 10rem , 8.6875rem  +  6.5625vw , 16.5625rem );
+    }
+}
+
+@supports not (height: clamp( 10rem , 8.6875rem  +  6.5625vw , 16.5625rem )) {
+    .youtube-video-page__item {
+      height: calc(10rem + 6.5625 * (100vw - 20rem) / 100);
+    }
+}
+}
+
+@media (max-width: 70.93625em) and (max-width: 22.68625em) {
+@supports (height: clamp( 9.6875rem , 8.75rem  +  4.6875vw , 14.375rem )) {
+    .youtube-video-page__item {
+      height: clamp( 9.6875rem , 8.75rem  +  4.6875vw , 14.375rem );
+    }
+}
+
+@supports not (height: clamp( 9.6875rem , 8.75rem  +  4.6875vw , 14.375rem )) {
+    .youtube-video-page__item {
+      height: calc(9.6875rem + 4.6875 * (100vw - 20rem) / 100);
+    }
+}
+}
+
+@media (max-width: 70.68625em) {
+  .our-virtues-page__container {
+    grid-template-columns: repeat(auto-fill, 14.75rem);
+  }
+}
+
+@media (max-width: 63.43625em) {
+  .footer__container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+}
+
+@media (max-width: 63.68625em) {
+  .electric-scooter-page__image {
+    width: 25rem;
+    height: 25rem;
+  }
+}
+
+@media (max-width: 58.18625em) {
+  .pre-footer-page__container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .pre-footer-page__menu {
+    width: 100%;
+    text-align: center;
+    gap: 2.1875rem;
+  }
+
+  .pre-footer-page__text-block {
+    max-width: 100%;
+  }
+
+@supports (gap: clamp( 1.5rem , 1.2375rem  +  1.3125vw , 2.8125rem )) {
+    .pre-footer-page__text-block {
+      gap: clamp( 1.5rem , 1.2375rem  +  1.3125vw , 2.8125rem );
+    }
+}
+
+@supports not (gap: clamp( 1.5rem , 1.2375rem  +  1.3125vw , 2.8125rem )) {
+    .pre-footer-page__text-block {
+      gap: calc(1.5rem + 1.3125 * (100vw - 20rem) / 100);
+    }
+}
+
+@supports (font-size: clamp( 2.5rem , 2.25rem  +  1.25vw , 3.75rem )) {
+    .pre-footer-page-menu__title {
+      font-size: clamp( 2.5rem , 2.25rem  +  1.25vw , 3.75rem );
+    }
+}
+
+@supports not (font-size: clamp( 2.5rem , 2.25rem  +  1.25vw , 3.75rem )) {
+    .pre-footer-page-menu__title {
+      font-size: calc(2.5rem + 1.25 * (100vw - 20rem) / 100);
+    }
+}
+
+@supports (font-size: clamp( 1.625rem , 1.55rem  +  0.375vw , 2rem )) {
+    .pre-footer-page-menu__link {
+      font-size: clamp( 1.625rem , 1.55rem  +  0.375vw , 2rem );
+    }
+}
+
+@supports not (font-size: clamp( 1.625rem , 1.55rem  +  0.375vw , 2rem )) {
+    .pre-footer-page-menu__link {
+      font-size: calc(1.625rem + 0.375 * (100vw - 20rem) / 100);
+    }
+}
+
+  .pre-footer-page-text-block__title {
+    text-align: center;
+  }
+
+@supports (font-size: clamp( 1.75rem , 1.525rem  +  1.125vw , 2.875rem )) {
+    .pre-footer-page-text-block__title {
+      font-size: clamp( 1.75rem , 1.525rem  +  1.125vw , 2.875rem );
+    }
+}
+
+@supports not (font-size: clamp( 1.75rem , 1.525rem  +  1.125vw , 2.875rem )) {
+    .pre-footer-page-text-block__title {
+      font-size: calc(1.75rem + 1.125 * (100vw - 20rem) / 100);
+    }
+}
+
+@supports (font-size: clamp( 1.375rem , 1.2125rem  +  0.8125vw , 2.1875rem )) {
+    .pre-footer-page-text-block__text {
+      font-size: clamp( 1.375rem , 1.2125rem  +  0.8125vw , 2.1875rem );
+    }
+}
+
+@supports not (font-size: clamp( 1.375rem , 1.2125rem  +  0.8125vw , 2.1875rem )) {
+    .pre-footer-page-text-block__text {
+      font-size: calc(1.375rem + 0.8125 * (100vw - 20rem) / 100);
+    }
+}
+
+@supports (font-size: clamp( 0.9375rem , 0.875rem  +  0.3125vw , 1.25rem )) {
+    .pre-footer-page-text-block__adress-block {
+      font-size: clamp( 0.9375rem , 0.875rem  +  0.3125vw , 1.25rem );
+    }
+}
+
+@supports not (font-size: clamp( 0.9375rem , 0.875rem  +  0.3125vw , 1.25rem )) {
+    .pre-footer-page-text-block__adress-block {
+      font-size: calc(0.9375rem + 0.3125 * (100vw - 20rem) / 100);
+    }
+}
+
+@supports (font-size: clamp( 1.25rem , 1.1875rem  +  0.3125vw , 1.5625rem )) {
+    .pre-footer-page-text-block__text-adress {
+      font-size: clamp( 1.25rem , 1.1875rem  +  0.3125vw , 1.5625rem );
+    }
+}
+
+@supports not (font-size: clamp( 1.25rem , 1.1875rem  +  0.3125vw , 1.5625rem )) {
+    .pre-footer-page-text-block__text-adress {
+      font-size: calc(1.25rem + 0.3125 * (100vw - 20rem) / 100);
+    }
+}
+}
+
+@media (max-width: 56.93625em) {
+  .electric-scooter-page__image-block {
+    -ms-grid-columns: (1fr)[2];
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.875rem;
+  }
+}
+
+@media (max-width: 55.87375em) {
+  .electric-scooter-page__image {
+    width: 21.25rem;
+    height: 21.25rem;
+  }
+}
+
+@media (max-width: 49.43625em) {
+  .electric-scooter-page__item {
+    gap: 0rem;
+  }
+
+  .electric-scooter-page__image-block {
+    -ms-grid-columns: (1fr)[1];
+    grid-template-columns: repeat(1, 1fr);
+    width: 100%;
+    gap: 3.125rem;
+  }
+
+  .electric-scooter-page__image {
+    width: 100%;
+    height: 100%;
+    display: none;
+  }
+
+  .electric-scooter-page .electric-scooter-page__slider {
+    display: block;
+  }
+}
+
+@media (max-width: 48.06125em) {
+  .top-page-banner {
+    display: none;
+  }
+
+  .header__bottom-header {
+    padding: 0.75rem 0.625rem;
+  }
+
+  .bottom-header {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+
+  .menu__body {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 72.5%;
+    height: 100%;
+    background-color: #e0dfdf;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 1.5625rem;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    text-align: left;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    -webkit-transition: all 0.8s ease 0s;
+    -o-transition: all 0.8s ease 0s;
+    transition: all 0.8s ease 0s;
+    z-index: 999;
+    overflow: auto;
+    pointer-events: all;
+  }
+
+  .menu-open .menu__body {
+    right: 0;
+  }
+
+  .menu__logo-block {
+    display: block;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    background-color: #c1c0c0;
+    padding: 0.75rem 0.625rem;
+  }
+
+  .menu__list {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+    row-gap: 1.5625rem;
+    padding: 0rem 0.625rem;
+  }
+
+  .menu__item {
+    text-align: left;
+  }
+
+@supports (font-size: clamp( 1.25rem , 1.15rem  +  0.5vw , 1.75rem )) {
+    .menu__link {
+      font-size: clamp( 1.25rem , 1.15rem  +  0.5vw , 1.75rem );
+    }
+}
+
+@supports not (font-size: clamp( 1.25rem , 1.15rem  +  0.5vw , 1.75rem )) {
+    .menu__link {
+      font-size: calc(1.25rem + 0.5 * (100vw - 20rem) / 100);
+    }
+}
+
+  .user-icon,
+  .product-cart-icon {
+    width: 1.875rem;
+    height: 1.875rem;
+  }
+
+  .icon-menu {
+    display: block;
+    position: relative;
+    width: 1.875rem;
+    height: 1.125rem;
+    z-index: 1;
+  }
+
+  .icon-menu span,
+  .icon-menu::before,
+  .icon-menu::after {
+    content: "";
+    -webkit-transition: all 0.5s ease 0s;
+    -o-transition: all 0.5s ease 0s;
+    transition: all 0.5s ease 0s;
+    right: 0;
+    position: absolute;
+    width: 100%;
+    height: 0.125rem;
+    background-color: #000;
+  }
+
+  .icon-menu::before {
+    top: 0;
+  }
+
+  .icon-menu::after {
+    bottom: 0;
+  }
+
+  .icon-menu span {
+    top: calc(50% - 0.0625rem);
+  }
+
+  .logo-block__open-icon {
+    display: block;
+    position: relative;
+    width: 1.875rem;
+    height: 1.125rem;
+    z-index: 1;
+  }
+
+  .logo-block__open-icon span,
+  .logo-block__open-icon::before,
+  .logo-block__open-icon::after {
+    content: "";
+    -webkit-transition: all 0.5s ease 0s;
+    -o-transition: all 0.5s ease 0s;
+    transition: all 0.5s ease 0s;
+    right: 0;
+    position: absolute;
+    width: 100%;
+    height: 0.125rem;
+    background-color: #000;
+  }
+
+@supports (margin-bottom: clamp( 2.5rem , 2.25rem  +  1.25vw , 3.75rem )) {
+    .main-page__text {
+      margin-bottom: clamp( 2.5rem , 2.25rem  +  1.25vw , 3.75rem );
+    }
+}
+
+@supports not (margin-bottom: clamp( 2.5rem , 2.25rem  +  1.25vw , 3.75rem )) {
+    .main-page__text {
+      margin-bottom: calc(2.5rem + 1.25 * (100vw - 20rem) / 100);
+    }
+}
+
+  .main-page__buttons {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+@supports (gap: clamp( 0.875rem , 0.8rem  +  0.375vw , 1.25rem )) {
+    .main-page__buttons {
+      gap: clamp( 0.875rem , 0.8rem  +  0.375vw , 1.25rem );
+    }
+}
+
+@supports not (gap: clamp( 0.875rem , 0.8rem  +  0.375vw , 1.25rem )) {
+    .main-page__buttons {
+      gap: calc(0.875rem + 0.375 * (100vw - 20rem) / 100);
+    }
+}
+
+  .buttons__main-button {
+    width: 15.625rem;
+    padding: 0.9375rem;
+  }
+
+  .title-promotion-page__title {
+    margin: 0 1.25rem;
+  }
+
+  .title-promotion-page__text {
+    margin: 0 1.25rem;
+  }
+
+  .no-webp .electric-skateboard-page__container{
+    background: url(../img/welcome/back-img-2.png) left center/cover no-repeat; }
+
+  .electric-skateboard-page__container {
+    padding-left: 0.9375rem;
+    padding-right: 0.9375rem;
+  }
+
+  .electric-skateboard-page__button {
+    padding: 0.9375rem 3.125rem;
+  }
+
+  .electric-scooter-page__button {
+    font-size: 1.25rem;
+  }
+
+  .product-swiper-page__arrow {
+    cursor: none;
+  }
+
+  .preloader {
+    background: #000 url(../img/loading-2.gif) center center/40% no-repeat;
+  }
+}
+
+@media (max-width: 48.06125em) and (max-width: 30.06125em) {
+  .menu__body {
+    width: 100%;
+  }
+}
+
+@media (max-width: 47.74875em) {
+@supports (width: clamp( 38.75rem , 38.375rem  +  1.875vw , 40.625rem )) {
+    .electric-scooter-page .electric-scooter-page__slide > picture > img {
+      width: clamp( 38.75rem , 38.375rem  +  1.875vw , 40.625rem );
+    }
+}
+
+@supports not (width: clamp( 38.75rem , 38.375rem  +  1.875vw , 40.625rem )) {
+    .electric-scooter-page .electric-scooter-page__slide > picture > img {
+      width: calc(38.75rem + 1.875 * (100vw - 20rem) / 100);
+    }
+}
+
+@supports (height: clamp( 31.875rem , 31.375rem  +  2.5vw , 34.375rem )) {
+    .electric-scooter-page .electric-scooter-page__slide > picture > img {
+      height: clamp( 31.875rem , 31.375rem  +  2.5vw , 34.375rem );
+    }
+}
+
+@supports not (height: clamp( 31.875rem , 31.375rem  +  2.5vw , 34.375rem )) {
+    .electric-scooter-page .electric-scooter-page__slide > picture > img {
+      height: calc(31.875rem + 2.5 * (100vw - 20rem) / 100);
+    }
+}
+
+@supports (width: clamp( 38.75rem , 38.375rem  +  1.875vw , 40.625rem )) {
+    .electric-scooter-page .electric-scooter-page__slide > img {
+      width: clamp( 38.75rem , 38.375rem  +  1.875vw , 40.625rem );
+    }
+}
+
+@supports not (width: clamp( 38.75rem , 38.375rem  +  1.875vw , 40.625rem )) {
+    .electric-scooter-page .electric-scooter-page__slide > img {
+      width: calc(38.75rem + 1.875 * (100vw - 20rem) / 100);
+    }
+}
+
+@supports (height: clamp( 31.875rem , 31.375rem  +  2.5vw , 34.375rem )) {
+    .electric-scooter-page .electric-scooter-page__slide > img {
+      height: clamp( 31.875rem , 31.375rem  +  2.5vw , 34.375rem );
+    }
+}
+
+@supports not (height: clamp( 31.875rem , 31.375rem  +  2.5vw , 34.375rem )) {
+    .electric-scooter-page .electric-scooter-page__slide > img {
+      height: calc(31.875rem + 2.5 * (100vw - 20rem) / 100);
+    }
+}
+}
+
+@media (max-width: 41.24875em) {
+  .photo-fade-swiper-page__photo-box {
+    max-width: 28.125rem;
+  }
+}
+
+@media (max-width: 41.62375em) {
+@supports (width: clamp( 35.625rem , 35.25rem  +  1.875vw , 37.5rem )) {
+    .electric-scooter-page .electric-scooter-page__slide > picture > img {
+      width: clamp( 35.625rem , 35.25rem  +  1.875vw , 37.5rem );
+    }
+}
+
+@supports not (width: clamp( 35.625rem , 35.25rem  +  1.875vw , 37.5rem )) {
+    .electric-scooter-page .electric-scooter-page__slide > picture > img {
+      width: calc(35.625rem + 1.875 * (100vw - 20rem) / 100);
+    }
+}
+
+@supports (height: clamp( 28.75rem , 28.25rem  +  2.5vw , 31.25rem )) {
+    .electric-scooter-page .electric-scooter-page__slide > picture > img {
+      height: clamp( 28.75rem , 28.25rem  +  2.5vw , 31.25rem );
+    }
+}
+
+@supports not (height: clamp( 28.75rem , 28.25rem  +  2.5vw , 31.25rem )) {
+    .electric-scooter-page .electric-scooter-page__slide > picture > img {
+      height: calc(28.75rem + 2.5 * (100vw - 20rem) / 100);
+    }
+}
+
+@supports (width: clamp( 35.625rem , 35.25rem  +  1.875vw , 37.5rem )) {
+    .electric-scooter-page .electric-scooter-page__slide > img {
+      width: clamp( 35.625rem , 35.25rem  +  1.875vw , 37.5rem );
+    }
+}
+
+@supports not (width: clamp( 35.625rem , 35.25rem  +  1.875vw , 37.5rem )) {
+    .electric-scooter-page .electric-scooter-page__slide > img {
+      width: calc(35.625rem + 1.875 * (100vw - 20rem) / 100);
+    }
+}
+
+@supports (height: clamp( 28.75rem , 28.25rem  +  2.5vw , 31.25rem )) {
+    .electric-scooter-page .electric-scooter-page__slide > img {
+      height: clamp( 28.75rem , 28.25rem  +  2.5vw , 31.25rem );
+    }
+}
+
+@supports not (height: clamp( 28.75rem , 28.25rem  +  2.5vw , 31.25rem )) {
+    .electric-scooter-page .electric-scooter-page__slide > img {
+      height: calc(28.75rem + 2.5 * (100vw - 20rem) / 100);
+    }
+}
+}
+
+@media (max-width: 37.56125em) {
+@supports (width: clamp( 29.375rem , 28.5rem  +  4.375vw , 33.75rem )) {
+    .electric-scooter-page .electric-scooter-page__slide > picture > img {
+      width: clamp( 29.375rem , 28.5rem  +  4.375vw , 33.75rem );
+    }
+}
+
+@supports not (width: clamp( 29.375rem , 28.5rem  +  4.375vw , 33.75rem )) {
+    .electric-scooter-page .electric-scooter-page__slide > picture > img {
+      width: calc(29.375rem + 4.375 * (100vw - 20rem) / 100);
+    }
+}
+
+@supports (height: clamp( 24.375rem , 23.625rem  +  3.75vw , 28.125rem )) {
+    .electric-scooter-page .electric-scooter-page__slide > picture > img {
+      height: clamp( 24.375rem , 23.625rem  +  3.75vw , 28.125rem );
+    }
+}
+
+@supports not (height: clamp( 24.375rem , 23.625rem  +  3.75vw , 28.125rem )) {
+    .electric-scooter-page .electric-scooter-page__slide > picture > img {
+      height: calc(24.375rem + 3.75 * (100vw - 20rem) / 100);
+    }
+}
+
+@supports (width: clamp( 29.375rem , 28.5rem  +  4.375vw , 33.75rem )) {
+    .electric-scooter-page .electric-scooter-page__slide > img {
+      width: clamp( 29.375rem , 28.5rem  +  4.375vw , 33.75rem );
+    }
+}
+
+@supports not (width: clamp( 29.375rem , 28.5rem  +  4.375vw , 33.75rem )) {
+    .electric-scooter-page .electric-scooter-page__slide > img {
+      width: calc(29.375rem + 4.375 * (100vw - 20rem) / 100);
+    }
+}
+
+@supports (height: clamp( 24.375rem , 23.625rem  +  3.75vw , 28.125rem )) {
+    .electric-scooter-page .electric-scooter-page__slide > img {
+      height: clamp( 24.375rem , 23.625rem  +  3.75vw , 28.125rem );
+    }
+}
+
+@supports not (height: clamp( 24.375rem , 23.625rem  +  3.75vw , 28.125rem )) {
+    .electric-scooter-page .electric-scooter-page__slide > img {
+      height: calc(24.375rem + 3.75 * (100vw - 20rem) / 100);
+    }
+}
+}
+
+@media (max-width: 36.31125em) {
+  .youtube-video-page__container {
+    grid-template-columns: repeat(auto-fill, 25rem);
+  }
+}
+
+@media (max-width: 31.93625em) {
+@supports (width: clamp( 24.375rem , 23.5rem  +  4.375vw , 28.75rem )) {
+    .electric-scooter-page .electric-scooter-page__slide > picture > img {
+      width: clamp( 24.375rem , 23.5rem  +  4.375vw , 28.75rem );
+    }
+}
+
+@supports not (width: clamp( 24.375rem , 23.5rem  +  4.375vw , 28.75rem )) {
+    .electric-scooter-page .electric-scooter-page__slide > picture > img {
+      width: calc(24.375rem + 4.375 * (100vw - 20rem) / 100);
+    }
+}
+
+@supports (height: clamp( 20rem , 19.25rem  +  3.75vw , 23.75rem )) {
+    .electric-scooter-page .electric-scooter-page__slide > picture > img {
+      height: clamp( 20rem , 19.25rem  +  3.75vw , 23.75rem );
+    }
+}
+
+@supports not (height: clamp( 20rem , 19.25rem  +  3.75vw , 23.75rem )) {
+    .electric-scooter-page .electric-scooter-page__slide > picture > img {
+      height: calc(20rem + 3.75 * (100vw - 20rem) / 100);
+    }
+}
+
+@supports (width: clamp( 24.375rem , 23.5rem  +  4.375vw , 28.75rem )) {
+    .electric-scooter-page .electric-scooter-page__slide > img {
+      width: clamp( 24.375rem , 23.5rem  +  4.375vw , 28.75rem );
+    }
+}
+
+@supports not (width: clamp( 24.375rem , 23.5rem  +  4.375vw , 28.75rem )) {
+    .electric-scooter-page .electric-scooter-page__slide > img {
+      width: calc(24.375rem + 4.375 * (100vw - 20rem) / 100);
+    }
+}
+
+@supports (height: clamp( 20rem , 19.25rem  +  3.75vw , 23.75rem )) {
+    .electric-scooter-page .electric-scooter-page__slide > img {
+      height: clamp( 20rem , 19.25rem  +  3.75vw , 23.75rem );
+    }
+}
+
+@supports not (height: clamp( 20rem , 19.25rem  +  3.75vw , 23.75rem )) {
+    .electric-scooter-page .electric-scooter-page__slide > img {
+      height: calc(20rem + 3.75 * (100vw - 20rem) / 100);
+    }
+}
+}
+
+@media (max-width: 30.87375em) {
+  .photo-fade-swiper-page__photo-box {
+    max-width: 21.875rem;
+  }
+}
+
+@media (max-width: 30.06125em) {
+  .electric-scooter-page__title {
+    text-align: center;
+  }
+
+  .electric-scooter-page__text {
+    text-align: center;
+  }
+
+  .electric-scooter-page__button {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1.5625rem 4rem;
+  }
+
+@supports (font-size: clamp( 1.4375rem , 1.3875rem  +  0.25vw , 1.6875rem )) {
+    .pre-footer-page-text-block__title {
+      font-size: clamp( 1.4375rem , 1.3875rem  +  0.25vw , 1.6875rem );
+    }
+}
+
+@supports not (font-size: clamp( 1.4375rem , 1.3875rem  +  0.25vw , 1.6875rem )) {
+    .pre-footer-page-text-block__title {
+      font-size: calc(1.4375rem + 0.25 * (100vw - 20rem) / 100);
+    }
+}
+
+  .pre-footer-page-text-block__text {
+    text-align: center;
+  }
+
+@supports (font-size: clamp( 1.125rem , 1.1rem  +  0.125vw , 1.25rem )) {
+    .pre-footer-page-text-block__text {
+      font-size: clamp( 1.125rem , 1.1rem  +  0.125vw , 1.25rem );
+    }
+}
+
+@supports not (font-size: clamp( 1.125rem , 1.1rem  +  0.125vw , 1.25rem )) {
+    .pre-footer-page-text-block__text {
+      font-size: calc(1.125rem + 0.125 * (100vw - 20rem) / 100);
+    }
+}
+
+@supports (font-size: clamp( 1.1875rem , 1.1375rem  +  0.25vw , 1.4375rem )) {
+    .pre-footer-page-text-block__text-adress {
+      font-size: clamp( 1.1875rem , 1.1375rem  +  0.25vw , 1.4375rem );
+    }
+}
+
+@supports not (font-size: clamp( 1.1875rem , 1.1375rem  +  0.25vw , 1.4375rem )) {
+    .pre-footer-page-text-block__text-adress {
+      font-size: calc(1.1875rem + 0.25 * (100vw - 20rem) / 100);
+    }
+}
+}
+
+@media (max-width: 27.31125em) {
+  .youtube-video-page__container {
+    grid-template-columns: repeat(auto-fill, 20rem);
+  }
+}
+
+@media (max-width: 26.93625em) {
+@supports (width: clamp( 21.875rem , 20.75rem  +  5.625vw , 27.5rem )) {
+    .electric-scooter-page .electric-scooter-page__slide > picture > img {
+      width: clamp( 21.875rem , 20.75rem  +  5.625vw , 27.5rem );
+    }
+}
+
+@supports not (width: clamp( 21.875rem , 20.75rem  +  5.625vw , 27.5rem )) {
+    .electric-scooter-page .electric-scooter-page__slide > picture > img {
+      width: calc(21.875rem + 5.625 * (100vw - 20rem) / 100);
+    }
+}
+
+@supports (height: clamp( 18.125rem , 17.75rem  +  1.875vw , 20rem )) {
+    .electric-scooter-page .electric-scooter-page__slide > picture > img {
+      height: clamp( 18.125rem , 17.75rem  +  1.875vw , 20rem );
+    }
+}
+
+@supports not (height: clamp( 18.125rem , 17.75rem  +  1.875vw , 20rem )) {
+    .electric-scooter-page .electric-scooter-page__slide > picture > img {
+      height: calc(18.125rem + 1.875 * (100vw - 20rem) / 100);
+    }
+}
+
+@supports (width: clamp( 21.875rem , 20.75rem  +  5.625vw , 27.5rem )) {
+    .electric-scooter-page .electric-scooter-page__slide > img {
+      width: clamp( 21.875rem , 20.75rem  +  5.625vw , 27.5rem );
+    }
+}
+
+@supports not (width: clamp( 21.875rem , 20.75rem  +  5.625vw , 27.5rem )) {
+    .electric-scooter-page .electric-scooter-page__slide > img {
+      width: calc(21.875rem + 5.625 * (100vw - 20rem) / 100);
+    }
+}
+
+@supports (height: clamp( 18.125rem , 17.75rem  +  1.875vw , 20rem )) {
+    .electric-scooter-page .electric-scooter-page__slide > img {
+      height: clamp( 18.125rem , 17.75rem  +  1.875vw , 20rem );
+    }
+}
+
+@supports not (height: clamp( 18.125rem , 17.75rem  +  1.875vw , 20rem )) {
+    .electric-scooter-page .electric-scooter-page__slide > img {
+      height: calc(18.125rem + 1.875 * (100vw - 20rem) / 100);
+    }
+}
+}
+
+@media (max-width: 24.49875em) {
+  .photo-fade-swiper-page__photo-box {
+    max-width: 18.75rem;
+  }
+}
+
+@media (max-width: 23.18625em) {
+@supports (width: clamp( 18.75rem , 18.125rem  +  3.125vw , 21.875rem )) {
+    .electric-scooter-page .electric-scooter-page__slide > picture > img {
+      width: clamp( 18.75rem , 18.125rem  +  3.125vw , 21.875rem );
+    }
+}
+
+@supports not (width: clamp( 18.75rem , 18.125rem  +  3.125vw , 21.875rem )) {
+    .electric-scooter-page .electric-scooter-page__slide > picture > img {
+      width: calc(18.75rem + 3.125 * (100vw - 20rem) / 100);
+    }
+}
+
+@supports (height: clamp( 13.75rem , 13.125rem  +  3.125vw , 16.875rem )) {
+    .electric-scooter-page .electric-scooter-page__slide > picture > img {
+      height: clamp( 13.75rem , 13.125rem  +  3.125vw , 16.875rem );
+    }
+}
+
+@supports not (height: clamp( 13.75rem , 13.125rem  +  3.125vw , 16.875rem )) {
+    .electric-scooter-page .electric-scooter-page__slide > picture > img {
+      height: calc(13.75rem + 3.125 * (100vw - 20rem) / 100);
+    }
+}
+
+@supports (width: clamp( 18.75rem , 18.125rem  +  3.125vw , 21.875rem )) {
+    .electric-scooter-page .electric-scooter-page__slide > img {
+      width: clamp( 18.75rem , 18.125rem  +  3.125vw , 21.875rem );
+    }
+}
+
+@supports not (width: clamp( 18.75rem , 18.125rem  +  3.125vw , 21.875rem )) {
+    .electric-scooter-page .electric-scooter-page__slide > img {
+      width: calc(18.75rem + 3.125 * (100vw - 20rem) / 100);
+    }
+}
+
+@supports (height: clamp( 13.75rem , 13.125rem  +  3.125vw , 16.875rem )) {
+    .electric-scooter-page .electric-scooter-page__slide > img {
+      height: clamp( 13.75rem , 13.125rem  +  3.125vw , 16.875rem );
+    }
+}
+
+@supports not (height: clamp( 13.75rem , 13.125rem  +  3.125vw , 16.875rem )) {
+    .electric-scooter-page .electric-scooter-page__slide > img {
+      height: calc(13.75rem + 3.125 * (100vw - 20rem) / 100);
+    }
+}
+}
+
+@media (max-width: 23.49875em) {
+  .preloader {
+    background: #000 url(../img/loading-2.gif) center center/60% no-repeat;
+  }
+}
+
+@media (max-width: 22.06125em) {
+  .footer__bank-block {
+    -ms-grid-columns: (2.375rem)[4];
+    grid-template-columns: repeat(4, 2.375rem);
+  }
+
+  .youtube-video-page__container {
+    grid-template-columns: repeat(auto-fill, 16.25rem);
+  }
+}
+
+@media (max-width: 20.68625em) {
+  .photo-fade-swiper-page__photo-box {
+    max-width: 16.875rem;
+  }
+}
+
+@media (max-width: 20.06125em) {
+  .no-webp .electric-skateboard-page__container{
+    background: url(../img/welcome/back-img-2-sm.png) left center/cover no-repeat; }
+
+@supports (width: clamp( 16.875rem , 16.375rem  +  2.5vw , 19.375rem )) {
+    .electric-scooter-page .electric-scooter-page__slide > picture > img {
+      width: clamp( 16.875rem , 16.375rem  +  2.5vw , 19.375rem );
+    }
+}
+
+@supports not (width: clamp( 16.875rem , 16.375rem  +  2.5vw , 19.375rem )) {
+    .electric-scooter-page .electric-scooter-page__slide > picture > img {
+      width: calc(16.875rem + 2.5 * (100vw - 20rem) / 100);
+    }
+}
+
+@supports (height: clamp( 12.5rem , 12rem  +  2.5vw , 15rem )) {
+    .electric-scooter-page .electric-scooter-page__slide > picture > img {
+      height: clamp( 12.5rem , 12rem  +  2.5vw , 15rem );
+    }
+}
+
+@supports not (height: clamp( 12.5rem , 12rem  +  2.5vw , 15rem )) {
+    .electric-scooter-page .electric-scooter-page__slide > picture > img {
+      height: calc(12.5rem + 2.5 * (100vw - 20rem) / 100);
+    }
+}
+
+@supports (width: clamp( 16.875rem , 16.375rem  +  2.5vw , 19.375rem )) {
+    .electric-scooter-page .electric-scooter-page__slide > img {
+      width: clamp( 16.875rem , 16.375rem  +  2.5vw , 19.375rem );
+    }
+}
+
+@supports not (width: clamp( 16.875rem , 16.375rem  +  2.5vw , 19.375rem )) {
+    .electric-scooter-page .electric-scooter-page__slide > img {
+      width: calc(16.875rem + 2.5 * (100vw - 20rem) / 100);
+    }
+}
+
+@supports (height: clamp( 12.5rem , 12rem  +  2.5vw , 15rem )) {
+    .electric-scooter-page .electric-scooter-page__slide > img {
+      height: clamp( 12.5rem , 12rem  +  2.5vw , 15rem );
+    }
+}
+
+@supports not (height: clamp( 12.5rem , 12rem  +  2.5vw , 15rem )) {
+    .electric-scooter-page .electric-scooter-page__slide > img {
+      height: calc(12.5rem + 2.5 * (100vw - 20rem) / 100);
+    }
+}
+}
+
+@media (any-hover: hover) {
+  .button:hover {
+    background-color: #f42d13;
+  }
+
+  .menu__link:hover::before {
+    width: 100%;
+    left: 0;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .actions__user-profile:hover .user-icon > g > path {
+    -webkit-transition: fill 0.5s ease 0s;
+    -o-transition: fill 0.5s ease 0s;
+    transition: fill 0.5s ease 0s;
+    fill: #FF4A32;
+  }
+
+  .actions__product-cart:hover .product-cart-icon > path {
+    -webkit-transition: fill 0.5s ease 0s;
+    -o-transition: fill 0.5s ease 0s;
+    transition: fill 0.5s ease 0s;
+    fill: #FF4A32;
+  }
+
+  .product-price-block__title:hover,
+  .product-price-block__title:active {
+    color: #960cff;
+    text-decoration: underline;
+    border-bottom: #960cff;
+    margin-bottom: 0.3125rem;
+  }
+}
+
+.webp .main-page__container{ background: url(../img/welcome/back-img.webp) center bottom/cover no-repeat; }
+
+.webp .electric-skateboard-page__container{ background: url(../img/welcome/back-img-2.webp) center center/cover no-repeat; }
+
+@media (max-width: 48.06125em){
+
+  .webp .electric-skateboard-page__container{ background: url(../img/welcome/back-img-2.webp) left center/cover no-repeat; }
+}
+
+@media (max-width: 20.06125em){
+
+  .webp .electric-skateboard-page__container{ background: url(../img/welcome/back-img-2-sm.webp) left center/cover no-repeat; }
+}
